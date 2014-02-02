@@ -66,6 +66,7 @@
         {
             "type": "shell",
             "scripts": [
+                "scripts/puppetize.sh",
                 "scripts/cleanup.sh"
             ]
         },
