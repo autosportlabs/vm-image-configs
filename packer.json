@@ -69,7 +69,12 @@
             "scripts": [
                 "scripts/puppetize.sh",
                 "scripts/cleanup.sh"
-            ]
+            ],
+            "override": {
+                "ami-builder-001": {
+                    "execute_command": "sudo -S bash {{ .Path }}"
+                }
+            }
         },
         {
             "type": "shell",
@@ -83,7 +88,12 @@
             "scripts": [
                 "scripts/lockdown.sh"
             ],
-            "only": [ "ami-builder-001" ]
+            "only": [ "ami-builder-001" ],
+            "override": {
+                "ami-builder-001": {
+                    "execute_command": "sudo -S bash {{ .Path }}"
+                }
+            }
         }
     ],
     "post-processors": [
