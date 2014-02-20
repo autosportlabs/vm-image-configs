@@ -8,6 +8,10 @@ set -x
 ## saw where the filesystem superblocks were like a day ahead of the real time
 ## after creating a new VirtualBox image.
 date
-hwclock -s
+
+## doesn't work on EC2
+hwclock -s || true
+
 date
+
 yum -y clean all
