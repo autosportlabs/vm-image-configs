@@ -13,7 +13,9 @@ set -e -u -x
 ## link for the same reason.  So, basically the kernel package needs to be
 ## spoon-fed. :-(
 
-cp -f /boot/grub/menu.lst /boot/grub/grub.conf
+## these are hard-linked on the VBox instance; gotta break that first
+rm -f /boot/grub/menu.lst
+cp /boot/grub/grub.conf /boot/grub/menu.lst
 ( cd /etc && ln -sf ../boot/grub/grub.conf )
 
 old_kernel_pkg=$( rpm -q kernel )
