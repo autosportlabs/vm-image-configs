@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e -u
+
 ## lock the root account so it can't be logged into
 /usr/sbin/usermod -L root
 
