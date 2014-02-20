@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -e
-set -u
-set -x
+exec 0<&- # close stdin
+
+set -e -u
 
 # Vagrant specific
 date > /etc/vagrant_box_build_time
