@@ -13,13 +13,17 @@
             "source_ami": "ami-50197a60",
             "instance_type": "t1.micro",
             "ssh_username": "ec2-user",
-            "ami_name": "ASL CentOS 6/packer {{timestamp}}",
+            "ami_name": "ASL CentOS 6 {{ isotime | clean_ami_name }}",
             "ami_block_device_mappings": [
                 {
                     "device_name": "/dev/sdb",
                     "virtual_name": "ephemeral0"
                 }
-            ]
+            ],
+            "tags": {
+                "builder": "ami-builder-001",
+                "timestamp": "{{ isotime }}"
+            }
         },
         {
             "name": "vbox-builder-001",
